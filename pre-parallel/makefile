@@ -1,6 +1,6 @@
 CC=nvcc
 #CFLAGS=-g
-CFLAGS=
+CFLAGS=-arch=sm_70 -O2
 
 nnp:loader.o nnp.o main.o kernels.o
 	$(CC) $(CFLAGS) kernels.o nnp.o loader.o main.o -o nnp -lm
