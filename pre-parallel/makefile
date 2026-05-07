@@ -1,6 +1,6 @@
 CC=nvcc
 #CFLAGS=-g
-CFLAGS=-gencode arch=compute_70,code=sm_70 -gencode arch=compute_70,code=compute_70 -O2
+CFLAGS=-gencode arch=compute_70,code=sm_70 -gencode arch=compute_70,code=compute_70 -O2 -cudart shared
 
 nnp:loader.o nnp.o main.o kernels.o
 	$(CC) $(CFLAGS) kernels.o nnp.o loader.o main.o -o nnp -lm
